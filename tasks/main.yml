@@ -1,0 +1,8 @@
+---
+- include: {{ansible_os_family}}.yml
+
+- name: setup ovs
+  shell: "ovs-vsctl set-manager {{ item }}"
+  with_items:
+    - "tcp:127.0.0.1:6640"
+    - "ptcp:6640"

@@ -1,0 +1,27 @@
+---
+- name: download ovs binaries
+  get_url:
+    validate_certs: "{{ validate_certs }}"
+    dest: "{{ item.dest }}"
+    url: "{{ item.url }}"
+  with_items:
+    - {
+        url: "https://cisco.box.com/shared/static/v1dvgoboo5zgqrtn6tu27vxeqtdo2bdl.deb",
+        dest: /tmp/ovs-common.deb
+      }
+    - {
+        url: "https://cisco.box.com/shared/static/ymbuwvt2qprs4tquextw75b82hyaxwon.deb",
+        dest: /tmp/ovs-switch.deb
+      }
+
+- name: install ovs-common
+  apt: "deb=/tmp/ovs-common.deb"
+
+- name: install ovs
+  apt: "deb=/tmp/ovs-switch.deb"
+
+- name: setup ovs
+  shell: "ovs-vsctl set-manager {{ item }}"
+  with_items:
+    - "tcp:127.0.0.1:6640"
+    - "ptcp:6640"
