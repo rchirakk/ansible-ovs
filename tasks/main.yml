@@ -1,5 +1,5 @@
 ---
-- include: {{ansible_os_family}}.yml
+- include: "{{ansible_os_family}}.yml"
 
 - name: setup ovs
   shell: "ovs-vsctl set-manager {{ item }}"

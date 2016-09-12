@@ -27,7 +27,6 @@
   register: selinux_set
 
 - name: permit openvswitch_t type in selinux
-  shell: >
-      semanage permissive -a openvswitch_t
+  shell: semanage permissive -a openvswitch_t
   when: selinux_set.stdout | search(".*SELinux status:.*enabled.*")
   become: true
