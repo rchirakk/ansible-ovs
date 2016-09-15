@@ -6,11 +6,11 @@
     url: "{{ item.url }}"
   with_items:
     - {
-        url: "https://cisco.box.com/shared/static/v1dvgoboo5zgqrtn6tu27vxeqtdo2bdl.deb",
+        url: "{{ deb_ovs_common_url }}",
         dest: /tmp/ovs-common.deb
       }
     - {
-        url: "https://cisco.box.com/shared/static/ymbuwvt2qprs4tquextw75b82hyaxwon.deb",
+        url: "{{ deb_ovs_switch_url }}",
         dest: /tmp/ovs-switch.deb
       }
 

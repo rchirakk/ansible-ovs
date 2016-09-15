@@ -1,2 +1,4 @@
 validate_certs: no
-ovs_deb_url: https://cisco.box.com/shared/static/zzmpe1zesdpf270k9pml40rlm4o8fs56.rpm
+rpm_url: https://cisco.box.com/shared/static/zzmpe1zesdpf270k9pml40rlm4o8fs56.rpm
+deb_ovs_switch_url: https://cisco.box.com/shared/static/ymbuwvt2qprs4tquextw75b82hyaxwon.deb
+deb_ovs_common_url: https://cisco.box.com/shared/static/v1dvgoboo5zgqrtn6tu27vxeqtdo2bdl.deb

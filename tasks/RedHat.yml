@@ -6,7 +6,7 @@
     url: "{{ item.url }}"
   with_items:
     - {
-        url: "https://cisco.box.com/shared/static/zzmpe1zesdpf270k9pml40rlm4o8fs56.rpm",
+        url: "{{ rpm_url }}",
         dest: /tmp/openvswitch-2.3.1-2.el7.x86_64.rpm
       }
 
